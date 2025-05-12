@@ -8,7 +8,7 @@ public class Main {
          Scanner sc = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println("\n--- MENÚ PRINCIPAL ---");
+            System.out.println("--- MENÚ PRINCIPAL ---");
             System.out.println("1. Control de precios en una tienda");
             System.out.println("2. Registro de horas de trabajadores");
             System.out.println("3. Análisis de notas escolares");

@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int opcion;
+        
         do {
             System.out.println("--- MENÚ PRINCIPAL ---");
             System.out.println("1. Control de precios en una tienda");
@@ -25,16 +26,16 @@ public class Main {
             sc.nextLine();
 
             switch (opcion) {
-                case 1 -> ControlPrecios.ejecutar();
-                case 2 -> RegistroHoras.ejecutar();
-                case 3 -> AnalisisNotas.ejecutar();
-                case 4 -> CajeroAutomatico.ejecutar();
-                case 5 -> RevisionVentas.ejecutar();
-                case 6 -> CentroSalud.ejecutar();
-                case 7 -> EvaluacionProductos.ejecutar();
-                case 8 -> TransportePublico.ejecutar();
-                case 9 -> ClasificacionCompras.ejecutar();
-                case 10 -> MonitoreoTemperatura.ejecutar();
+                case 1 -> controlPrecios(sc);
+                case 2 -> registroHoras(sc);
+                case 3 -> analisisNotas(sc);
+                case 4 -> cajeroAutomatico(sc);
+                case 5 -> revisionVentas(sc);
+                case 6 -> centroSalud(sc);
+                case 7 -> evaluacionProductos(sc);
+                case 8 -> transportePublico(sc);
+                case 9 -> clasificacionCompras(sc);
+                case 10 -> monitoreoTemperatura(sc);
                 case 0 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción inválida");
             }
@@ -42,11 +43,9 @@ public class Main {
 
         sc.close();
     }
-}
 
-class ControlPrecios {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+    
+    public static void controlPrecios(Scanner sc) {
         String[] nombres = new String[5];
         double[] precios = new double[5];
 
@@ -65,11 +64,9 @@ class ControlPrecios {
             }
         }
     }
-}
 
-class RegistroHoras {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+
+    public static void registroHoras(Scanner sc) {
         double[][] horas = new double[3][5];
 
         for (int i = 0; i < 3; i++) {
@@ -83,11 +80,9 @@ class RegistroHoras {
             System.out.println("Total de horas del trabajador " + (i + 1) + ": " + total);
         }
     }
-}
 
-class AnalisisNotas {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+  
+    public static void analisisNotas(Scanner sc) {
         ArrayList<Double> notas = new ArrayList<>();
         double suma = 0;
         int aprobados = 0;
@@ -104,11 +99,9 @@ class AnalisisNotas {
         System.out.println("Promedio: " + (suma / notas.size()));
         System.out.println("Estudiantes aprobados: " + aprobados);
     }
-}
 
-class CajeroAutomatico {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+
+    public static void cajeroAutomatico(Scanner sc) {
         int[] billetes = {100000, 50000, 20000, 10000};
 
         System.out.print("Ingrese el monto a retirar: ");
@@ -122,11 +115,9 @@ class CajeroAutomatico {
             }
         }
     }
-}
 
-class RevisionVentas {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+   
+    public static void revisionVentas(Scanner sc) {
         double[] ventas = new double[7];
 
         for (int i = 0; i < 7; i++) {
@@ -143,11 +134,9 @@ class RevisionVentas {
         System.out.println("Día con mayor venta: Día " + (diaMayor + 1));
         System.out.println("Día con menor venta: Día " + (diaMenor + 1));
     }
-}
 
-class CentroSalud {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+ 
+    public static void centroSalud(Scanner sc) {
         ArrayList<String> nombres = new ArrayList<>();
         ArrayList<Integer> prioridades = new ArrayList<>();
 
@@ -168,11 +157,8 @@ class CentroSalud {
             }
         }
     }
-}
 
-class EvaluacionProductos {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+    public static void evaluacionProductos(Scanner sc) {
         int[] estado = new int[50];
         int buenos = 0, defectuosos = 0;
 
@@ -188,11 +174,9 @@ class EvaluacionProductos {
         System.out.println("Productos defectuosos: " + defectuosos);
         System.out.println("Porcentaje de defectuosos: " + porcentajeDefectuosos + "%");
     }
-}
 
-class TransportePublico {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+
+    public static void transportePublico(Scanner sc) {
         double[] horarios = {7.00, 9.30, 12.00, 14.30, 17.00, 19.30};
 
         System.out.print("Ingrese la hora actual (formato 24h, ej. 13.50): ");
@@ -211,11 +195,9 @@ class TransportePublico {
             System.out.println("No hay más buses disponibles hoy.");
         }
     }
-}
 
-class ClasificacionCompras {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+
+    public static void clasificacionCompras(Scanner sc) {
         ArrayList<Double> compras = new ArrayList<>();
         int pequeno = 0, mediano = 0, grande = 0;
 
@@ -232,11 +214,9 @@ class ClasificacionCompras {
         System.out.println("Compras medianas: " + mediano);
         System.out.println("Compras grandes: " + grande);
     }
-}
 
-class MonitoreoTemperatura {
-    public static void ejecutar() {
-        Scanner sc = new Scanner(System.in);
+  
+    public static void monitoreoTemperatura(Scanner sc) {
         double[] temperaturas = new double[12];
         int altas = 0, bajas = 0;
 
@@ -252,4 +232,3 @@ class MonitoreoTemperatura {
     }
 }
 
-    
